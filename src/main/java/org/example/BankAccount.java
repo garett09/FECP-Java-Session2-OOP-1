@@ -3,9 +3,10 @@ package org.example;
 public class BankAccount {
     private int accountNumber;
     private String acctHolderName;
-    private int availableBalance;
+    private double availableBalance;
+    private int depositAmount;
 
-    public BankAccount(int accountNumber, String acctHolderName, int availableBalance){
+    public BankAccount(int accountNumber, String acctHolderName, double availableBalance){
         this.accountNumber = accountNumber;
         this.acctHolderName = acctHolderName;
         this.availableBalance = availableBalance;
@@ -26,7 +27,7 @@ public class BankAccount {
         this.acctHolderName = acctHolderName;
     }
 
-    public int getAvailableBalance(){
+    public double getAvailableBalance(){
         return this.availableBalance;
     }
 
@@ -57,5 +58,13 @@ public class BankAccount {
         System.out.println("Account Holder Name: " + this.acctHolderName);
         System.out.println("Available Balance: " + this.availableBalance);
     }
+
+    public String getAccountName() {
+        return acctHolderName;
+    }
+    public double getBalance() {
+        return availableBalance;
+    }
+
 }
 
