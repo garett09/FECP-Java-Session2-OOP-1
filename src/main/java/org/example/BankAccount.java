@@ -6,11 +6,19 @@ public class BankAccount {
     private double availableBalance;
     private int depositAmount;
 
+
     public BankAccount(int accountNumber, String acctHolderName, double availableBalance){
         this.accountNumber = accountNumber;
         this.acctHolderName = acctHolderName;
         this.availableBalance = availableBalance;
     }
+
+    public BankAccount(int accountNumber, String acctHolderName){
+        this.accountNumber = accountNumber;
+        this.acctHolderName = acctHolderName;
+
+    }
+
 
     public int getAccountNumber(){
         return this.accountNumber;
@@ -35,7 +43,8 @@ public class BankAccount {
          this.availableBalance=availableBalance;
     }
 
-    public void deposit(int amount){
+
+    public void deposit(double amount){
         if(amount > 0){
             this.availableBalance += amount;
             System.out.println("Deposit successful. New balance: " + this.availableBalance);
@@ -43,7 +52,7 @@ public class BankAccount {
             System.out.println("Deposit amount must be positive.");
         }
     }
-    public void withdraw(int amount){
+    public void withdraw(double amount){
         if(amount > 0 && amount <= this.availableBalance){
             this.availableBalance -= amount;
             System.out.println("Withdrawal successful. New balance: " + this.availableBalance);
@@ -59,12 +68,8 @@ public class BankAccount {
         System.out.println("Available Balance: " + this.availableBalance);
     }
 
-    public String getAccountName() {
-        return acctHolderName;
-    }
-    public double getBalance() {
-        return availableBalance;
-    }
+
+
 
 }
 
